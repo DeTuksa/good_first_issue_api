@@ -1,86 +1,175 @@
+# 🧐 Good First Issue Dashboard – Backend
+
 <p align="center">
-  <a href="http://nestjs.com/" target="blank"><img src="https://nestjs.com/img/logo-small.svg" width="120" alt="Nest Logo" /></a>
+  <img src="https://nestjs.com/img/logo-small.svg" width="100" alt="NestJS logo" />
 </p>
 
-[circleci-image]: https://img.shields.io/circleci/build/github/nestjs/nest/master?token=abc123def456
-[circleci-url]: https://circleci.com/gh/nestjs/nest
-
-  <p align="center">A progressive <a href="http://nodejs.org" target="_blank">Node.js</a> framework for building efficient and scalable server-side applications.</p>
-    <p align="center">
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/v/@nestjs/core.svg" alt="NPM Version" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/l/@nestjs/core.svg" alt="Package License" /></a>
-<a href="https://www.npmjs.com/~nestjscore" target="_blank"><img src="https://img.shields.io/npm/dm/@nestjs/common.svg" alt="NPM Downloads" /></a>
-<a href="https://circleci.com/gh/nestjs/nest" target="_blank"><img src="https://img.shields.io/circleci/build/github/nestjs/nest/master" alt="CircleCI" /></a>
-<a href="https://coveralls.io/github/nestjs/nest?branch=master" target="_blank"><img src="https://coveralls.io/repos/github/nestjs/nest/badge.svg?branch=master#9" alt="Coverage" /></a>
-<a href="https://discord.gg/G7Qnnhy" target="_blank"><img src="https://img.shields.io/badge/discord-online-brightgreen.svg" alt="Discord"/></a>
-<a href="https://opencollective.com/nest#backer" target="_blank"><img src="https://opencollective.com/nest/backers/badge.svg" alt="Backers on Open Collective" /></a>
-<a href="https://opencollective.com/nest#sponsor" target="_blank"><img src="https://opencollective.com/nest/sponsors/badge.svg" alt="Sponsors on Open Collective" /></a>
-  <a href="https://paypal.me/kamilmysliwiec" target="_blank"><img src="https://img.shields.io/badge/Donate-PayPal-ff3f59.svg" alt="Donate us"/></a>
-    <a href="https://opencollective.com/nest#sponsor"  target="_blank"><img src="https://img.shields.io/badge/Support%20us-Open%20Collective-41B883.svg" alt="Support us"></a>
-  <a href="https://twitter.com/nestframework" target="_blank"><img src="https://img.shields.io/twitter/follow/nestframework.svg?style=social&label=Follow" alt="Follow us on Twitter"></a>
+<p align="center">
+  <b>A backend API that helps developers discover GitHub issues labeled <code>good first issue</code> by language or topic.</b>
 </p>
-  <!--[![Backers on Open Collective](https://opencollective.com/nest/backers/badge.svg)](https://opencollective.com/nest#backer)
-  [![Sponsors on Open Collective](https://opencollective.com/nest/sponsors/badge.svg)](https://opencollective.com/nest#sponsor)-->
 
-## Description
+---
 
-[Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
+## 📘 Table of Contents
 
-## Project setup
+* [✨ Features](#-features)
+* [📦 Installation](#-installation)
+* [⚙️ Configuration](#%ef%b8%8f-configuration)
+* [🚀 Running the App](#-running-the-app)
+* [🧪 Testing](#-testing)
+* [📢 API Usage](#-api-usage)
+* [📁 Project Structure](#-project-structure)
+* [📚 Contributing](#-contributing)
+* [🛡 License](#-license)
+
+---
+
+## ✨ Features
+
+* ✅ Fetches GitHub issues tagged with `good first issue`.
+* 🔍 Supports filtering by language and topic.
+* ⚡ Built with [NestJS](https://nestjs.com) + [GitHub REST API v3](https://docs.github.com/en/rest).
+* 🧪 Includes unit and integration tests (Jest + Supertest).
+* 📦 Modular and scalable backend architecture.
+* 📊 Simple and ready for frontend dashboard integration.
+
+---
+
+## 📦 Installation
 
 ```bash
-$ npm install
+git clone https://github.com/DeTuksa/good_first_issue_api.git
+cd good_first_issue_api
+npm install
 ```
 
-## Compile and run the project
+---
+
+## ⚙️ Configuration
+
+Create a `.env` file in the root directory:
+
+```env
+GITHUB_TOKEN=your_personal_github_token
+```
+
+This token is used to authenticate requests to the GitHub API to avoid rate limits.
+
+---
+
+## 🚀 Running the App
 
 ```bash
-# development
-$ npm run start
+# Development
+npm run start:dev
 
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
+# Production
+npm run start:prod
 ```
 
-## Run tests
+---
+
+## 🧪 Testing
 
 ```bash
-# unit tests
-$ npm run test
+# Unit tests
+npm run test
 
-# e2e tests
-$ npm run test:e2e
+# End-to-end (integration) tests
+npm run test:e2e
 
-# test coverage
-$ npm run test:cov
+# Code coverage
+npm run test:cov
 ```
 
-## Resources
+---
 
-Check out a few resources that may come in handy when working with NestJS:
+## 📢 API Usage
 
-- Visit the [NestJS Documentation](https://docs.nestjs.com) to learn more about the framework.
-- For questions and support, please visit our [Discord channel](https://discord.gg/G7Qnnhy).
-- To dive deeper and get more hands-on experience, check out our official video [courses](https://courses.nestjs.com/).
-- Deploy your application to AWS with the help of [NestJS Mau](https://mau.nestjs.com) in just a few clicks.
-- Visualize your application graph and interact with the NestJS application in real-time using [NestJS Devtools](https://devtools.nestjs.com).
-- Need help with your project (part-time to full-time)? Check out our official [enterprise support](https://enterprise.nestjs.com).
-- To stay in the loop and get updates, follow us on [X](https://x.com/nestframework) and [LinkedIn](https://linkedin.com/company/nestjs).
-- Looking for a job, or have a job to offer? Check out our official [Jobs board](https://jobs.nestjs.com).
+### `GET /github/issues`
 
-## Support
+Fetches GitHub issues labeled `good first issue`.
 
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
+**Query Parameters:**
 
-## Stay in touch
+| Parameter | Type   | Description                               |
+| --------- | ------ | ----------------------------------------- |
+| language  | string | (Optional) Filter by programming language |
+| topic     | string | (Optional) Filter by repository topic     |
 
-- Author - [Kamil Myśliwiec](https://twitter.com/kammysliwiec)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
+**Example Request:**
 
-## License
+```bash
+GET /github/issues?language=typescript&topic=nestjs
+```
 
-Nest is [MIT licensed](https://github.com/nestjs/nest/blob/master/LICENSE).
+**Example Response:**
+
+```json
+[
+  {
+    "title": "Fix input validation bug",
+    "url": "https://github.com/org/repo/issues/123",
+    "repository": "https://api.github.com/repos/org/repo",
+    "created_at": "2025-05-14T10:00:00Z",
+    "labels": ["good first issue", "bug"]
+  }
+]
+```
+
+---
+
+## 📁 Project Structure
+
+```
+src/
+├── github/
+│   ├── github.controller.spec.ts      # Controller unit tests
+│   ├── github.controller.ts         # Handles API routes 
+│   ├── github.module.ts
+│   ├── github.service.spec.ts    # Unit tests
+│   └── github.service.ts # Business logic and GitHub API requests
+├── app.module.ts
+
+test/
+├── github.e2e-spec.ts            # End-to-end tests (Supertest)
+
+.env.example                      # Sample env config
+```
+
+---
+
+## 📚 Contributing
+
+We welcome contributions of all kinds!
+
+### 🛠 How to Contribute
+
+1. Fork the repository.
+2. Create a new branch: `git checkout -b feature/your-feature-name`.
+3. Make your changes and commit: `git commit -m 'feat: your message'`.
+4. Push to your fork: `git push origin feature/your-feature-name`.
+5. Submit a pull request.
+
+### ✅ Guidelines
+
+* Follow conventional commit messages (e.g. `feat:`, `fix:`, `docs:`).
+* Write or update tests for any changes.
+* Ensure all tests pass: `npm run test`.
+
+Check out [`CONTRIBUTING.md`](CONTRIBUTING.md) for full details.
+
+---
+
+## 🛡 License
+
+This project is licensed under the [MIT License](LICENSE).
+
+---
+
+## 🙌 Acknowledgments
+
+* [NestJS](https://nestjs.com)
+* [GitHub REST API](https://docs.github.com/en/rest)
+* [Supertest](https://github.com/visionmedia/supertest)
+* [Jest](https://jestjs.io/)
